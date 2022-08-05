@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.SettingFragment">
+
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:background="#F3F5F6">
+       <LinearLayout
+
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:orientation="vertical"
+           android:layout_marginTop="1dp">
+
+           <ImageView
+               android:layout_width="match_parent"
+               android:layout_height="80dp"
+               android:padding="-10dp"
+               android:scaleType="centerCrop"
+               android:src="@drawable/waterdrops"
+               android:requiresFadingEdge="horizontal"
+
+
+
+               />
+
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginHorizontal="10dp"
+               android:fontFamily="@font/alata"
+               android:gravity="center"
+               android:text="Personal Information"
+
+               android:textColor="@color/Black"
+               android:textSize="24dp" />
+       <LinearLayout
+          android:layout_marginHorizontal="6dp"
+           android:layout_marginTop="8dp"
+           android:padding="12dp"
+           android:background="@drawable/ic_roundbg"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical">
+
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:layout_marginBottom="6dp"
+              >
+
+
+              <TextView
+                  android:layout_margin="4dp"
+                  android:padding="10dp"
+                    android:textColor="@color/Black"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="1"
+                  android:textSize="15dp"
+                  android:text="Name" />
+
+              <EditText
+
+                  android:id="@+id/userName"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="0.1"
+                  android:ems="10"
+                  android:layout_marginRight="19dp"
+                  android:inputType="textPersonName"
+                  android:textSize="15dp"
+                  android:hint="Name"
+                  android:clickable="true"
+                  android:focusable="true"/>
+
+
+          </LinearLayout>
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:layout_marginBottom="6dp"
+               >
+
+
+               <TextView
+                   android:layout_margin="4dp"
+                   android:padding="10dp"
+                   android:textColor="@color/Black"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:textSize="15dp"
+                   android:text="Gender" />
+
+               <EditText
+                   android:id="@+id/userGender"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="0"
+                   android:textSize="15dp"
+                   android:layout_marginRight="18dp"
+                   android:ems="5"
+                   android:inputType="textPersonName"
+                   android:hint="Gender"
+
+                   android:clickable="true"
+                   android:focusable="true"/>
+
+
+           </LinearLayout>
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:layout_marginBottom="6dp"
+               >
+
+
+               <TextView
+                   android:layout_margin="4dp"
+                   android:padding="10dp"
+                    android:textColor="@color/Black"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:textSize="15dp"
+                   android:text="Weight" />
+
+               <EditText
+                   android:id="@+id/userWeight"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="0"
+                   android:ems="5"
+                   android:textSize="15sp"
+                   android:layout_marginRight="18dp"
+                   android:maxLength="5"
+                   android:maxLines="1"
+
+                   android:inputType="numberDecimal"
+                   android:hint="Weight (Kg)"
+                   android:clickable="true"
+                   android:focusable="true"/>
+
+
+           </LinearLayout>
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:layout_marginBottom="6dp"
+               >
+
+
+               <TextView
+                   android:layout_margin="4dp"
+                   android:padding="10dp"
+                    android:textColor="@color/Black"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:textSize="15sp"
+                   android:text="Age" />
+
+               <EditText
+
+                   android:id="@+id/userAge"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="0"
+                   android:layout_marginRight="18dp"
+                   android:textSize="15sp"
+
+                   android:ems="5"
+                   android:inputType="number"
+                   android:hint="Age"
+                   android:clickable="true"
+                   android:focusable="true"/>
+
+
+           </LinearLayout>
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               >
+
+
+               <TextView
+                   android:layout_margin="4dp"
+                   android:padding="10dp"
+                    android:textColor="@color/Black"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:textSize="15sp"
+                   android:text="Water intake goal" />
+
+               <EditText
+                   android:id="@+id/userWaterGoal"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="0"
+                   android:textSize="15sp"
+                   android:layout_marginRight="18dp"
+                   android:ems="5"
+                   android:inputType="number"
+                   android:hint="Water(ml)"
+                   android:clickable="true"
+                   android:focusable="true"/>
+
+
+           </LinearLayout>
+
+
+       </LinearLayout>
+           <LinearLayout
+               android:layout_marginTop="12dp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical">
+
+
+
+           </LinearLayout>
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginHorizontal="10dp"
+               android:fontFamily="@font/alata"
+               android:gravity="center"
+               android:text="Notification Settings"
+
+               android:textColor="@color/Black"
+               android:layout_marginBottom="8dp"
+               android:textSize="24dp" />
+           <LinearLayout
+
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+
+               >
+           <LinearLayout
+               android:padding="12dp"
+               android:layout_marginHorizontal="10dp"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:background="@drawable/ic_roundbg"
+             >
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Notifications"
+                   android:textColor="@color/Black"
+                   android:paddingEnd="210dp"
+                   android:textSize="15sp"/>
+
+               <Switch
+                   android:paddingStart="18dp"
+                   android:id="@+id/notificationSwitch"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+
+                   android:layout_weight="0.01"
+
+                   tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+
+
+           </LinearLayout>
+               <LinearLayout
+                   android:id="@+id/sleepTimeLayout"
+                   android:visibility="gone"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal"
+                   android:padding="6dp"
+                   android:layout_marginTop="5dp"
+                   android:background="@drawable/ic_roundbg"
+                   android:layout_marginHorizontal="10dp">
+                   <TextView
+                       android:layout_weight="@integer/material_motion_duration_long_1"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:text="Wake-Up Time"
+                       android:textColor="@color/black"
+                       android:textSize="15sp"/>
+
+                   <EditText
+                       android:id="@+id/WakeUpTime"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_weight="0"
+                       android:ems="5"
+                       android:textSize="15sp"
+                       android:inputType="time" />
+               </LinearLayout>
+                   <LinearLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:orientation="horizontal"
+                       android:padding="6dp"
+                       android:layout_marginTop="5dp"
+                       android:background="@drawable/ic_roundbg"
+                       android:layout_marginHorizontal="10dp">
+                       <TextView
+                           android:layout_weight="@integer/material_motion_duration_long_1"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:text="Sleep Time"
+                           android:textColor="@color/black"
+                           android:textSize="15sp"/>
+
+                       <EditText
+                           android:id="@+id/SleepTime"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_weight="0"
+                           android:ems="5"
+                           android:textSize="15sp"
+                           android:inputType="time" />
+                   </LinearLayout>
+
+
+               </LinearLayout>
+
+
+
+
+
+           </LinearLayout>
+
+           <TextView
+               android:layout_width="match_parent"
+
+               android:layout_height="wrap_content"
+               android:layout_marginTop="20dp"
+               android:fontFamily="@font/alata"
+               android:text="Others"
+               android:textColor="@color/black"
+               android:textSize="22dp"
+               android:layout_gravity="center"
+               android:gravity="center"/>
+
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:layout_marginTop="10dp">
+               <TextView
+                   android:padding="12dp"
+                   android:id="@+id/privacyPolicyText"
+                   android:layout_marginHorizontal="10dp"
+                   android:background="@drawable/ic_roundbg"
+                   android:clickable="true"
+                   android:focusable="true"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:textSize="15sp"
+                   android:textColor="@color/black"
+                   android:text="Privacy Policy"/>
+               <TextView
+                   android:layout_marginTop="10dp"
+                   android:padding="12dp"
+                   android:id="@+id/FeedBackText"
+                   android:layout_marginHorizontal="10dp"
+                   android:background="@drawable/ic_roundbg"
+                   android:clickable="true"
+                   android:focusable="true"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:textSize="15sp"
+                   android:textColor="@color/black"
+                   android:text="Feedback"/>
+               <TextView
+                   android:layout_marginTop="10dp"
+                   android:layout_marginBottom="18dp"
+                   android:padding="12dp"
+
+                   android:id="@+id/AboutText"
+                   android:layout_marginHorizontal="10dp"
+                   android:background="@drawable/ic_roundbg"
+                   android:clickable="true"
+                   android:focusable="true"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:textSize="15sp"
+                   android:textColor="@color/black"
+                   android:text="About"/>
+
+
+
+
+           </LinearLayout>
+
+
+
+
+
+
+       </LinearLayout>
+
+
+
+   </ScrollView>
+
+</FrameLayout>
