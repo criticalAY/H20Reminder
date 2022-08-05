@@ -270,6 +270,7 @@
                    android:textSize="15sp"/>
 
                <Switch
+                   android:checked="true"
                    android:paddingStart="18dp"
                    android:id="@+id/notificationSwitch"
                    android:layout_width="0dp"
@@ -284,7 +285,7 @@
            </LinearLayout>
                <LinearLayout
                    android:id="@+id/sleepTimeLayout"
-                   android:visibility="gone"
+                   android:visibility="visible"
                    android:layout_width="match_parent"
                    android:layout_height="wrap_content"
                    android:orientation="vertical">
@@ -305,12 +306,16 @@
                        android:textColor="@color/black"
                        android:textSize="15sp"/>
 
-                   <EditText
+                   <TextView
+                       android:clickable="true"
+                       android:focusable="true"
                        android:id="@+id/WakeUpTime"
                        android:layout_width="wrap_content"
                        android:layout_height="wrap_content"
                        android:layout_weight="0"
                        android:ems="5"
+                       android:padding="6dp"
+                       android:hint="00:00 AM"
                        android:textSize="15sp"
                        android:inputType="time" />
                </LinearLayout>
@@ -330,7 +335,11 @@
                            android:textColor="@color/black"
                            android:textSize="15sp"/>
 
-                       <EditText
+                       <TextView
+                           android:padding="6dp"
+                           android:hint="00:00 PM"
+                           android:clickable="true"
+                           android:focusable="true"
                            android:id="@+id/SleepTime"
                            android:layout_width="wrap_content"
                            android:layout_height="wrap_content"

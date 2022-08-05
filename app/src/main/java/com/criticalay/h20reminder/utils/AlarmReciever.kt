@@ -8,6 +8,7 @@ import androidx.core.app.NotificationBuilderWithBuilderAccessor
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.criticalay.h20reminder.R
+import com.criticalay.h20reminder.ui.MainActivity
 import com.criticalay.h20reminder.ui.fragments.HomeFragment
 
 class AlarmReciever : BroadcastReceiver() {
@@ -16,10 +17,10 @@ class AlarmReciever : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
 
 
-         val i = Intent(context,HomeFragment::class.java)
+         val i = Intent(context,MainActivity::class.java)
         intent!!.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         val pendingIntent = PendingIntent.getActivity(context,RequestCode,i,0)
-        val builder = NotificationCompat.Builder(context!!,"H2O Reminder").setSmallIcon(R.drawable.waterdrop)
+        val builder = NotificationCompat.Builder(context!!,"H2OReminder").setSmallIcon(R.drawable.waterdrop)
             .setContentTitle("H2O REMINDER")
             .setContentText("Drink Water")
             .setAutoCancel(true)
