@@ -22,7 +22,7 @@ class AlarmReciever : BroadcastReceiver() {
         val pendingIntent = PendingIntent.getActivity(context,RequestCode,i,0)
         val builder = NotificationCompat.Builder(context!!,"H2OReminder").setSmallIcon(R.drawable.waterdrop)
             .setContentTitle("H2O REMINDER")
-            .setContentText("Drink Water")
+            .setContentText("Did you drink water? If not please have a sip")
             .setAutoCancel(true)
             .setDefaults(NotificationCompat.DEFAULT_ALL)
             .setPriority(NotificationCompat.PRIORITY_HIGH)

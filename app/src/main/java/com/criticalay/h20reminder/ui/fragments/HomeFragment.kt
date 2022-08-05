@@ -111,6 +111,7 @@ class HomeFragment : Fragment() {
 
                 AlarmManager.RTC_WAKEUP,calendar.timeInMillis,
                 AlarmManager.INTERVAL_DAY,pendingIntent
+
             )
             Toast.makeText(context, "Reminder Set Successfully", Toast.LENGTH_SHORT).show()
 

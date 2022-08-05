@@ -10,6 +10,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <ProgressBar
         android:id="@+id/progress_bar"
         android:layout_width="295dp"
@@ -37,7 +38,7 @@
         app:layout_constraintEnd_toEndOf="@+id/progress_bar"
         app:layout_constraintStart_toStartOf="@+id/progress_bar"
         app:layout_constraintTop_toTopOf="@+id/progress_bar"
-        tools:text="60%" />
+        tools:text="100/2000ml" />
 
     <LinearLayout
         android:id="@+id/custombtnlayout"
