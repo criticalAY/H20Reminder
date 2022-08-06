@@ -16,6 +16,7 @@ import androidx.core.view.isVisible
 import com.criticalay.h20reminder.R
 import com.criticalay.h20reminder.databinding.FragmentHomeBinding
 import com.criticalay.h20reminder.databinding.FragmentSettingBinding
+import com.criticalay.h20reminder.ui.MainActivity
 import com.criticalay.h20reminder.utils.AlarmReciever
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
@@ -72,7 +73,9 @@ class SettingFragment : Fragment() {
         sleepTimeLayout.isVisible = notificationSwitch.isChecked
 
         if(!sleepTimeLayout.isVisible){
-            alarmManager.cancel(pendingIntent)
+
+
+         CancelAlarm()
 
 
 
@@ -162,8 +165,9 @@ class SettingFragment : Fragment() {
 
 
         if(calendar.time == SleepTime) {
+            CancelAlarm()
 
-            alarmManager.cancel(pendingIntent)
+
         }
 
     }
@@ -180,6 +184,13 @@ class SettingFragment : Fragment() {
             AlarmManager.INTERVAL_HOUR,pendingIntent
 
         )
+
+
+    }
+
+
+    private fun CancelAlarm(){
+        alarmManager.cancel(pendingIntent)
 
 
     }

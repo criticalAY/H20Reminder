@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+
+
+    <item android:id="@+id/cup100ml"
+        android:title="100ml"
+
+        />
+    <item android:id="@+id/cup125ml"
+        android:title="125ml"
+        />
+    <item android:id="@+id/cup150ml"
+        android:title="150ml"
+        />
+    <item android:id="@+id/cup175ml"
+        android:title="175ml"
+        />
+    <item android:id="@+id/cup200ml"
+        android:title="200ml"
+        />
+    <item android:id="@+id/cup250ml"
+        android:title="250ml"
+        />
+    <item android:id="@+id/cup300ml"
+        android:title="300ml"
+        />
+    <item android:id="@+id/cup400ml"
+        android:title="400ml"
+        />
+    <item android:id="@+id/cupCustom"
+        android:title="Customise"
+        />
+</menu>

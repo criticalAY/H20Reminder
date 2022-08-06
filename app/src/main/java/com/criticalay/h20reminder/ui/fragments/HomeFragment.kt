@@ -8,17 +8,23 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
+import android.view.*
+import android.widget.*
+
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.core.content.ContextCompat.getSystemServiceName
+import androidx.core.graphics.drawable.DrawableCompat.inflate
 import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.criticalay.h20reminder.R
 import com.criticalay.h20reminder.databinding.FragmentHomeBinding
+import com.criticalay.h20reminder.databinding.FragmentHomeBinding.inflate
+import com.criticalay.h20reminder.model.Drink
+import com.criticalay.h20reminder.model.DrinkViewModel
 import com.criticalay.h20reminder.model.Notification
+import com.criticalay.h20reminder.ui.fragments.adapters.DrinkListAdapter
 import com.criticalay.h20reminder.utils.AlarmReciever
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.timepicker.MaterialTimePicker
@@ -28,7 +34,12 @@ import java.util.*
 
 
 class HomeFragment : Fragment() {
+    private var size : String= "200"
     private var progr = 0
+
+    private lateinit var mDrinkViewModel  : DrinkViewModel
+
+
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -38,6 +49,8 @@ class HomeFragment : Fragment() {
     private lateinit var pendingIntent: PendingIntent
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+
 
         super.onCreate(savedInstanceState)
         //onButtonClicked()
@@ -51,16 +64,65 @@ class HomeFragment : Fragment() {
     ): View? {
 
 
+
         // Inflate view and obtain an instance of the binding class
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
       //  text_view_progress.setText("fdfdfd")
-        _binding!!.progressBar.progress =10
-        _binding!!.addCustomDrinkBtn.setOnClickListener{
+        _binding!!.progressBar.progress =50
 
-            Toast.makeText(context, "hello add custom Drink", Toast.LENGTH_SHORT).show()
+             val adapter = DrinkListAdapter()
+        val recyclerView = _binding!!.recyclerViewRecord
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+
+
+
+
+        mDrinkViewModel= ViewModelProvider(this)[DrinkViewModel::class.java]
+
+        mDrinkViewModel.readAllData.observe(viewLifecycleOwner, androidx.lifecycle.Observer { user->
+            adapter.setData(user)
+
+        })
+
+        _binding!!.DrunkBtn.setOnClickListener{
+
+
+            insertDrinkDataToDatabase()
+        }
+
+        _binding!!.addCustomDrinkBtn.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+
+               size = parent?.getItemAtPosition(position).toString()
+
+                Toast.makeText(
+                    context,
+                    "You have Selected ${parent?.getItemAtPosition(position).toString()}",
+                    Toast.LENGTH_SHORT
+                ).show()
+
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
 
 
         }
+
+
+
+
+
+
+
 
 
         createNotificationChannel()
@@ -79,6 +141,29 @@ class HomeFragment : Fragment() {
 
 
       //  progress_bar.progress = 20
+
+
+
+    }
+
+    private fun insertDrinkDataToDatabase() {
+
+     val id = 0
+//        val hr = calendar.set(Calendar.HOUR,)
+//        val min = Calendar.MINUTE
+//        val tt =
+//        val ttt= "$hr : $min $tt"
+
+        val date = Calendar.DATE.toString()
+        val time = Calendar.getInstance().time.toString()
+        var drink : String= "Apple"
+        val vol = size.toInt()
+      //  val vol = 200
+
+        val drunk = Drink(id, date, time,drink,vol)
+        mDrinkViewModel.addDrink(drunk)
+        Toast.makeText(context, "successfully added yout drink data", Toast.LENGTH_SHORT).show()
+
 
 
 
@@ -147,6 +232,35 @@ class HomeFragment : Fragment() {
     progress_bar.progress = progr
     text_view_progress.text = "$progr%"
 }
+
+
+    override fun onCreateContextMenu(
+        menu: ContextMenu,
+        v: View,
+        menuInfo: ContextMenu.ContextMenuInfo?
+    ) {
+        super.onCreateContextMenu(menu, v, menuInfo)
+      val inflater: MenuInflater = MenuInflater(context)
+    inflater.inflate(R.menu.water_menu, menu)
+        //return true
+
+
+    }
+
+    override fun onContextItemSelected(item: MenuItem): Boolean {
+
+        when(item.itemId){
+
+                R.id.cup100ml -> Toast.makeText(context, "hello 100", Toast.LENGTH_SHORT).show()
+            R.id.cup125ml -> Toast.makeText(context, "hello 125", Toast.LENGTH_SHORT).show()
+            R.id.cup150ml -> Toast.makeText(context, "hello 150", Toast.LENGTH_SHORT).show()
+
+
+        }
+
+
+        return super.onContextItemSelected(item)
+    }
 
 
 

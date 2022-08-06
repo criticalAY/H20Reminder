@@ -6,10 +6,10 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "Drunk")
 data class Drink(
     @PrimaryKey(autoGenerate = true)
-    var id: Int = 0,
-    var date: String = "",
-    var time: String = "",
-    var drink: String = "",
-    var amount: Int = 0,
-    var metric: String = ""
-)
+    var id: Int,
+    var date: String,
+    var time: String,
+    var drink: String,
+    var amount: Int,
+
+    )

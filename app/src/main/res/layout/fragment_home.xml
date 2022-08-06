@@ -6,104 +6,153 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragments.HomeFragment">
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-
-    <ProgressBar
-        android:id="@+id/progress_bar"
-        android:layout_width="295dp"
-        android:layout_height="295dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:indeterminateOnly="false"
-        android:progress="10"
-        android:progressDrawable="@drawable/circle"
-
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.144" />
-
-    <TextView
-        android:id="@+id/text_view_progress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toBottomOf="@+id/progress_bar"
-        app:layout_constraintEnd_toEndOf="@+id/progress_bar"
-        app:layout_constraintStart_toStartOf="@+id/progress_bar"
-        app:layout_constraintTop_toTopOf="@+id/progress_bar"
-        tools:text="100/2000ml" />
-
-    <LinearLayout
-        android:id="@+id/custombtnlayout"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_margin="12dp"
-        android:padding="8dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/progress_bar">
+        android:layout_height="match_parent">
+
+
         <TextView
-            android:id="@+id/addCustomAlarm"
-            android:clickable="true"
-            android:focusable="true"
+            android:id="@+id/text_view_progress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="6dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_marginEnd="12dp"
-            android:text="Set Custom Reminder    "
             android:textColor="@color/black"
-            android:textSize="15sp"
-            android:drawableTint="@color/DarkOrange"
-            android:drawableEnd="@drawable/ic_circleplus"/>
+            android:visibility="visible"
+
+
+            app:layout_constraintBottom_toBottomOf="@+id/progress_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.587"
+            tools:text="100/2000ml" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="295dp"
+            android:layout_height="295dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:indeterminateOnly="false"
+            android:progress="10"
+            android:progressDrawable="@drawable/circle"
+
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.144" />
+
+
+        <LinearLayout
+            android:id="@+id/custombtnlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:padding="8dp"
+            app:layout_constraintTop_toBottomOf="@id/progress_bar">
+
+            <TextView
+                android:id="@+id/addCustomAlarm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginEnd="12dp"
+                android:clickable="true"
+                android:drawableEnd="@drawable/ic_circleplus"
+                android:drawableTint="@color/DarkOrange"
+                android:focusable="true"
+                android:gravity="center"
+                android:padding="6dp"
+                android:text="Set Custom Reminder    "
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+
+            <ImageView
+                android:layout_width="40dp"
+
+                android:layout_height="40dp"
+                android:layout_marginStart="40dp"
+
+                android:src="@drawable/hotcup" />
+
+            <Spinner
+                android:id="@+id/addCustomDrinkBtn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="5dp"
+
+
+                android:entries="@array/CustomDrinks"
+                android:fitsSystemWindows="true"
+                android:soundEffectsEnabled="true"
+
+                />
+
+
+        </LinearLayout>
 
         <ImageButton
-            android:id="@+id/addCustomDrinkBtn"
+            android:id="@+id/DrunkBtn"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_weight="0"
-            android:scaleType="centerCrop"
-            android:layout_gravity="center"
-            android:layout_marginStart="60dp"
-            android:src="@drawable/hotcup" />
+            android:scaleType="fitCenter"
 
 
+            android:src="@drawable/cup_red"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.18"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.452" />
 
+        <TextView
+            android:id="@+id/todaysrecordtext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alata"
+            android:text="Today's Records"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.462"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.629" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewRecord"
+            android:layout_width="415dp"
+           android:padding="18dp"
+            android:layout_height="251dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
 
-    </LinearLayout>
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/todaysrecordtext"
+            app:layout_constraintVertical_bias="0.897"
+            tools:itemCount="20"
 
-    <TextView
-        android:id="@+id/todaysrecordtext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/alata"
-        android:text="Today's Records"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.462"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.629" />
+            tools:listitem="@layout/water_item" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewRecord"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.897" />
+        <TextView
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirm that you just drunk water"
+            android:textColor="@color/black"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.469" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
