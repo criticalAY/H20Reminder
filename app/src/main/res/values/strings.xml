@@ -8,13 +8,13 @@
 
     <string-array name="CustomDrinks">
 
-        <item>100ml</item>
-        <item>125ml</item>
-        <item>150ml</item>
-        <item>175ml</item>
-        <item>200ml</item>
-        <item>300ml</item>
-        <item>400ml</item>
+        <item>100</item>
+        <item>125</item>
+        <item>150</item>
+        <item>175</item>
+        <item>200</item>
+        <item>300</item>
+        <item>400</item>
         <item>Customise</item>
 
     </string-array>

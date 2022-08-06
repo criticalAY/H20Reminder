@@ -149,13 +149,13 @@ class HomeFragment : Fragment() {
     private fun insertDrinkDataToDatabase() {
 
      val id = 0
-//        val hr = calendar.set(Calendar.HOUR,)
-//        val min = Calendar.MINUTE
-//        val tt =
-//        val ttt= "$hr : $min $tt"
+        val hr = Calendar.HOUR_OF_DAY
+        val min = Calendar.MINUTE
+        val tt = Calendar.AM_PM
+        val ttt= "$hr:$min $tt"
 
         val date = Calendar.DATE.toString()
-        val time = Calendar.getInstance().time.toString()
+        val time =ttt
         var drink : String= "Apple"
         val vol = size.toInt()
       //  val vol = 200
