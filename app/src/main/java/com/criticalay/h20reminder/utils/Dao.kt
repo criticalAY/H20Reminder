@@ -26,8 +26,8 @@ interface Dao {
         @Insert(onConflict = OnConflictStrategy.IGNORE)
         suspend fun insertDrinkData(drink: Drink)
 
-    @Query("SELECT * FROM Drunk  ORDER BY id ASC")
-     fun readDrinkDataDetailsSelectedDay(): LiveData<List<Drink>>
+    @Query("SELECT * FROM Drunk  ORDER BY id DESC")
+    fun readDrinkDataDetailsSelectedDay(): LiveData<List<Drink>>
 
 
 

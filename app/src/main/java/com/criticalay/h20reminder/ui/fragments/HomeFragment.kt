@@ -1,5 +1,6 @@
 package com.criticalay.h20reminder.ui.fragments
 
+import android.annotation.SuppressLint
 import android.app.AlarmManager
 import android.app.NotificationChannel
 import android.app.NotificationManager
@@ -35,8 +36,8 @@ import java.util.*
 
 
 class HomeFragment : Fragment() {
-    private var size : String= "200"
-    private var progr = 0
+    private var size : String= "0"
+    private var progress = 0
 
     private lateinit var mDrinkViewModel  : DrinkViewModel
 
@@ -69,7 +70,7 @@ class HomeFragment : Fragment() {
         // Inflate view and obtain an instance of the binding class
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
       //  text_view_progress.setText("fdfdfd")
-        _binding!!.progressBar.progress =50
+        _binding!!.progressBar.progress =0
 
              val adapter = DrinkListAdapter()
         val recyclerView = _binding!!.recyclerViewRecord
@@ -87,13 +88,11 @@ class HomeFragment : Fragment() {
 
         })
 
-        _binding!!.DrunkBtn.setOnClickListener{
 
 
-            insertDrinkDataToDatabase()
-        }
 
-        _binding!!.addCustomDrinkBtn.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+
+         _binding!!.addCustomDrinkBtn.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
             override fun onItemSelected(
                 parent: AdapterView<*>?,
                 view: View?,
@@ -116,6 +115,14 @@ class HomeFragment : Fragment() {
             }
 
 
+        }
+        _binding!!.DrunkBtn.setOnClickListener{
+
+
+            insertDrinkDataToDatabase()
+            progress+=size.toInt()
+
+            updateProgressBar()
         }
 
 
@@ -147,16 +154,24 @@ class HomeFragment : Fragment() {
 
     }
 
+    @SuppressLint("SimpleDateFormat")
     private fun insertDrinkDataToDatabase() {
 
      val id = 0
         val sdf = SimpleDateFormat("hh:mm:ss")
         val currentDate = sdf.format(Date())
-      //  System.out.println(" C DATE is  $currentDate")
-        val hr = Calendar.HOUR_OF_DAY
-        val min = Calendar.MINUTE
-        val tt = Calendar.AM_PM
-        val ttt= "$hr:$min $tt"
+        val now =Calendar.getInstance()
+        val currentMonth: Int = now.get(Calendar.MONTH)
+
+
+
+
+
+
+
+
+
+
 
         val date = Calendar.DATE.toString()
         val time =currentDate.toString()
@@ -164,9 +179,10 @@ class HomeFragment : Fragment() {
         val vol = size.toInt()
       //  val vol = 200
 
+
         val drunk = Drink(id, date, time,drink,vol)
         mDrinkViewModel.addDrink(drunk)
-        Toast.makeText(context, "successfully added yout drink data", Toast.LENGTH_SHORT).show()
+       // Toast.makeText(context, "Successfully added your drink data", Toast.LENGTH_SHORT).show()
 
 
 
@@ -233,8 +249,12 @@ class HomeFragment : Fragment() {
 
 
     private fun updateProgressBar() {
-    progress_bar.progress = progr
-    text_view_progress.text = "$progr%"
+
+   val progressString = "$progress / 2000 ml"
+  ProgressTextTv.text = progressString
+        var percent = (progress*100/2000)
+        progress_bar.progress = percent
+
 }
 
 
@@ -265,6 +285,8 @@ class HomeFragment : Fragment() {
 
         return super.onContextItemSelected(item)
     }
+
+
 
 
 

@@ -8,6 +8,7 @@ data class Drink(
     @PrimaryKey(autoGenerate = true)
     var id: Int,
     var date: String,
+
     var time: String,
     var drink: String,
     var amount: Int,

@@ -3,12 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/waterContainer">
+    android:elevation="4dp"
+
+    android:id="@+id/waterContainer"
+    android:outlineProvider="background"
+    >
 
     <LinearLayout
         android:padding="5dp"
+        android:backgroundTint="@color/LightSalmon"
+        android:background="@color/LightBlue"
 
-        android:layout_margin="10dp"
+
+
+        android:layout_margin="1dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 

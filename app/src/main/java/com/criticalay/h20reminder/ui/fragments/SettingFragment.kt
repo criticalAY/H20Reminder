@@ -190,6 +190,7 @@ class SettingFragment : Fragment() {
 
 
     private fun CancelAlarm(){
+
         alarmManager.cancel(pendingIntent)
 
 
