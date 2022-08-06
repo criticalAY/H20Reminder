@@ -30,6 +30,7 @@ import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
 import kotlinx.android.synthetic.main.fragment_home.*
+import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -149,13 +150,16 @@ class HomeFragment : Fragment() {
     private fun insertDrinkDataToDatabase() {
 
      val id = 0
+        val sdf = SimpleDateFormat("hh:mm:ss")
+        val currentDate = sdf.format(Date())
+      //  System.out.println(" C DATE is  $currentDate")
         val hr = Calendar.HOUR_OF_DAY
         val min = Calendar.MINUTE
         val tt = Calendar.AM_PM
         val ttt= "$hr:$min $tt"
 
         val date = Calendar.DATE.toString()
-        val time =ttt
+        val time =currentDate.toString()
         var drink : String= "Apple"
         val vol = size.toInt()
       //  val vol = 200
