@@ -11,7 +11,7 @@
 
     <LinearLayout
         android:padding="5dp"
-        android:backgroundTint="@color/LightSalmon"
+        android:backgroundTint="@color/WhiteSmoke"
         android:background="@color/LightBlue"
 
 
@@ -41,6 +41,18 @@
             android:layout_height="wrap_content"
 
             android:text="12:12 am" />
+        <TextView
+
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginStart="12dp"
+            android:layout_gravity="center"
+            android:textSize="15sp"
+            android:id="@+id/dateTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="12/08/2022" />
 
         <TextView
 

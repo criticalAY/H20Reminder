@@ -27,6 +27,8 @@ import com.criticalay.h20reminder.model.DrinkViewModel
 import com.criticalay.h20reminder.model.Notification
 import com.criticalay.h20reminder.ui.fragments.adapters.DrinkListAdapter
 import com.criticalay.h20reminder.utils.AlarmReciever
+import com.criticalay.h20reminder.utils.Dao
+import com.criticalay.h20reminder.utils.Repository
 import com.google.android.material.datepicker.MaterialDatePicker
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
@@ -83,10 +85,20 @@ class HomeFragment : Fragment() {
 
         mDrinkViewModel= ViewModelProvider(this)[DrinkViewModel::class.java]
 
+
+        val today= SimpleDateFormat("dd-MM-yyyy").format(Date())
+
+
+
+
+
         mDrinkViewModel.readAllData.observe(viewLifecycleOwner, androidx.lifecycle.Observer { user->
             adapter.setData(user)
 
         })
+
+
+
 
 
 
@@ -160,8 +172,10 @@ class HomeFragment : Fragment() {
      val id = 0
         val sdf = SimpleDateFormat("hh:mm:ss")
         val currentDate = sdf.format(Date())
-        val now =Calendar.getInstance()
-        val currentMonth: Int = now.get(Calendar.MONTH)
+
+
+        val sdf_Month = SimpleDateFormat("dd-MM-yyyy")
+        val currentDateDAY = sdf_Month.format(Date())
 
 
 
@@ -173,7 +187,7 @@ class HomeFragment : Fragment() {
 
 
 
-        val date = Calendar.DATE.toString()
+        val date = currentDateDAY.toString()
         val time =currentDate.toString()
         var drink : String= "Apple"
         val vol = size.toInt()

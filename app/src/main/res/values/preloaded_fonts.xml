@@ -2,5 +2,7 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/alata</item>
+        <item>@font/biryani</item>
+        <item>@font/biryani_semibold</item>
     </array>
 </resources>

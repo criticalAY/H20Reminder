@@ -31,9 +31,9 @@ class TabsActivity : AppCompatActivity() {
         viewPager.adapter = adapter
         tabs.setupWithViewPager(viewPager)
 
-        tabs.getTabAt(0)!!.setIcon(R.drawable.ic_home)
-        tabs.getTabAt(1)!!.setIcon(R.drawable.ic_show_chart)
-        tabs.getTabAt(2)!!.setIcon(R.drawable.ic_settings)
+        tabs.getTabAt(0)!!.setIcon(R.drawable.dhouse)
+        tabs.getTabAt(1)!!.setIcon(R.drawable.chart)
+        tabs.getTabAt(2)!!.setIcon(R.drawable.control)
 
 
     }

@@ -20,7 +20,7 @@ class AlarmReciever : BroadcastReceiver() {
          val i = Intent(context,MainActivity::class.java)
         intent!!.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         val pendingIntent = PendingIntent.getActivity(context,RequestCode,i,0)
-        val builder = NotificationCompat.Builder(context!!,"H2OReminder").setSmallIcon(R.drawable.waterdrop)
+        val builder = NotificationCompat.Builder(context!!,"H2OReminder").setSmallIcon(R.drawable.confirm_cup)
             .setContentTitle("H2O REMINDER")
             .setContentText("Did you drink water? If not please have a sip")
             .setAutoCancel(true)

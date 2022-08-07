@@ -29,6 +29,11 @@ interface Dao {
     @Query("SELECT * FROM Drunk  ORDER BY id DESC")
     fun readDrinkDataDetailsSelectedDay(): LiveData<List<Drink>>
 
+//    @Query("SELECT * FROM Drunk WHERE date = :dates ORDER BY id DESC ")
+//    suspend  fun dateRecord(dates : String) : MutableList<Drink>
+
+
+
 
 
 

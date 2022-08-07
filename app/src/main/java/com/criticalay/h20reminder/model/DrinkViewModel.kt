@@ -12,7 +12,8 @@ import kotlinx.coroutines.launch
 class DrinkViewModel (application: Application):AndroidViewModel(application){
 
 
-     val readAllData : LiveData<List<Drink>>
+
+    val readAllData : LiveData<List<Drink>>
     private val repository : Repository
 
     init {
@@ -20,7 +21,11 @@ class DrinkViewModel (application: Application):AndroidViewModel(application){
         repository = Repository(drinkDao)
         readAllData = repository.realAllData
 
+
     }
+
+
+
 
 
 

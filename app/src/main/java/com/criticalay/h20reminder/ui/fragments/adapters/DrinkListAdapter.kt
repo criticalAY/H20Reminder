@@ -30,6 +30,7 @@ class DrinkListAdapter : RecyclerView.Adapter<DrinkListAdapter.MyDrinkHolder>(){
         val currentItem = drinkList[position]
         holder.itemView.timeTv.text = currentItem.time
         holder.itemView.amountTv.text = currentItem.amount.toString()
+        holder.itemView.dateTv.text=currentItem.date
 
 
     }
